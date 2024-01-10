@@ -69,6 +69,33 @@ print(app_config.api_keys.weather_api)
 # => abc123def456
 ```
 
+In addition to initializing `AttrDictX` with a dictionary, you can also use **variadic arguments** to create an instance. This approach is particularly handy for simpler configurations or when you prefer a cleaner, argument-based syntax.
+
+```python
+from attrdictx import AttrDictX
+
+# Example: Simplified configuration using variadic arguments
+simple_config = AttrDictX(
+    debug_mode=True,
+    max_connections=10,
+    default_timeout='30s',
+    logging_level='INFO'
+)
+
+# Accessing the configuration settings as attributes
+print(simple_config.debug_mode)
+# => True
+
+print(simple_config.max_connections)
+# => 10
+
+print(simple_config.default_timeout)
+# => '30s'
+
+print(simple_config.logging_level)
+# => 'INFO'
+```
+
 ## Contributions
 
 We welcome contributions from the community to improve and expand AttrDictX. If you encounter any issues, have suggestions, or want to contribute code, feel free to open an issue or submit a pull request on our GitHub repository: [https://github.com/kyo-takano/AttrDictX](https://github.com/kyo-takano/AttrDictX)
